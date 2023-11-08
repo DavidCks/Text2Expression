@@ -1,0 +1,19 @@
+{
+  "author": {
+    "name": "Shukri Adams",
+    "email": "shukri.adams@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/shukriadams/node-text-to-ipa/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "NodeJS port of text-to-ipa project (https://github.com/surrsurus/text-to-ipa)",
+  "homepage": "https://github.com/shukriadams/node-text-to-ipa#readme",
+  "name": "@informath/text-to-ipa",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shukriadams/node-text-to-ipa.git"
+  },
+  "version": "1.0.0"
+}
