@@ -28,7 +28,7 @@ export function ipa2mouth(ipa: string): VRMMouthExpression[] {
   const expressions: VRMMouthExpression[] = [];
   for (let i = 0; i < ipa.length; i++) {
     const char = ipa.charAt(i);
-    const expression = ipa2mouthMap[char];
+    const expression = (ipa2mouthMap as any)[char];
     if (expression) {
       if (expression.duration) {
         expressions.push(expression);
