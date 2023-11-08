@@ -7,13 +7,16 @@
     "moduleDetection": "force",
     "allowImportingTsExtensions": true,
     "strict": true,
+    "outDir": "./lib",
+    "declaration": true,
+    "declarationDir": "./types",
     "downlevelIteration": true,
     "skipLibCheck": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "noEmit": true,
+    "emitDeclarationOnly" : true,
     "types": [
       "bun-types" // add Bun global
     ]

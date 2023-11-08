@@ -4,6 +4,12 @@ this repository can be useful for when you want to animate something based on sp
 
 ---
 
+## NPM
+
+Heres the npm package link: <https://www.npmjs.com/package/text2expression#text2expression>
+
+---
+
 The text2expression function tries to estimate mouth positions of a VRM model based on a given text. It provides you with the estimated runtime of an audio file that may be created based on the text and an array of VRM Mouth Expressions, containing the values for the expressions of "a", "i", "u", "e" and "o" as well as the duration for which each expression should last.
 
 Example usage:
