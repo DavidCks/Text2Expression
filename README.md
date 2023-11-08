@@ -45,8 +45,6 @@ This website served as a reference for the IPA:
 This website served as a reference for the VRM Model:
 <https://vrm-viewer-48655.web.app/>
 
-
-
 ## Estimations
 
 Estimations are based on the female english browser Speech Synthesis API voice anyone can use from within chrome.
@@ -54,7 +52,6 @@ Estimations are based on the female english browser Speech Synthesis API voice a
 Each voice and language has different characteristics to consider, so each one has to have their own characteristics represented in the estimations made.
 
 Despite the approximative nature, it works quite well.
-
 
 ## IPA Dict
 
