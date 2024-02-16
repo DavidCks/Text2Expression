@@ -1,5 +1,3 @@
-import exp from "constants";
-
 export const pauseDuration = 270,
   wordBreakDuration = 12,
   characterDuration = 40.05;

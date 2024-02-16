@@ -75,3 +75,7 @@ You can find some dictionaries here:
 be sure to remove the "/" at the start and the end of the ipa strings.
 
 An english <-> IPA dictionary is included inside this repository under "informath/text-to-ipa/ipadict.txt"
+
+### CHANGELOG
+
+0.0.2: Moved function exports out of type exports

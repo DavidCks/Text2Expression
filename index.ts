@@ -6,14 +6,12 @@ export type {
   IPATextExpressions,
 } from "./text2expression";
 
-export type {
-  VRMMouthExpression,
-  emptyVRMMouthExpression,
-  ipa2mouth,
-} from "./ipa2VRMMouthExpression";
+export type { VRMMouthExpression } from "./ipa2VRMMouthExpression";
 
 export {
   pauseDuration,
   wordBreakDuration,
   characterDuration,
+  ipa2mouth,
+  emptyVRMMouthExpression,
 } from "./ipa2VRMMouthExpression";

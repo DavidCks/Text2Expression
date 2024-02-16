@@ -1,6 +1,6 @@
 {
   "name": "text2expression",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Converts text into expressions that can be used to animate a vrm model",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
@@ -19,9 +19,6 @@
   },
   "devDependencies": {
     "bun-types": "^0.6.0",
-    "typescript": "^5.2.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "latest"
   }
 }
