@@ -2,17 +2,16 @@
   "name": "text2expression",
   "version": "0.0.2",
   "description": "Converts text into expressions that can be used to animate a vrm model",
+  "module": "index.ts",
   "main": "lib/index.js",
-  "types": "types/index.d.ts",
+  "type": "module",
   "keywords": ["IPA", "VRM", "expressions", "text2vrm", "text2animation"],
   "author": "DavidCks",
   "license": "MIT",
-  "module": "index.ts",
   "files": [
     "lib",
     "types"
   ],
-  "type": "module",
   "scripts": {
     "build": "bun build index.ts --outdir lib && bun run build:declaration",
     "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.json"
@@ -20,5 +19,8 @@
   "devDependencies": {
     "bun-types": "^0.6.0",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
   }
 }

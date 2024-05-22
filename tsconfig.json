@@ -1,21 +1,46 @@
 {
+  "exclude": [
+      "./lib",
+      "./node_modules",
+      "./3rd"
+  ],
+  "include": [
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "compilerOptions": {
-    "lib": ["ESNext"],
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "resolveJsonModule": true,
+    "strict": false,
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "rootDir": "./",
+    "outDir": "./lib",
     "module": "esnext",
-    "target": "esnext",
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
     "moduleResolution": "bundler",
     "moduleDetection": "force",
     "allowImportingTsExtensions": true,
-    "strict": true,
-    "outDir": "./lib",
-    "declaration": true,
-    "declarationDir": "./types",
+    "emitDeclarationOnly" : true,
+    "noEmit": false,
+    "composite": true,
     "downlevelIteration": true,
     "skipLibCheck": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "emitDeclarationOnly" : true,
   }
 }
