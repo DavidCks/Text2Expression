@@ -43,6 +43,7 @@ export function ipa2mouth(ipa: string): VRMMouthExpression[] {
 const ipa2mouthMap = {
   " ": emptyVRMMouthExpression(wordBreakDuration),
   ".": emptyVRMMouthExpression(pauseDuration),
+  ",": emptyVRMMouthExpression(pauseDuration),
   i: { aa: 0.22, ee: 0, ih: 1, oh: 0, ou: 0 },
   y: { aa: 0, ee: 0, ih: 0, oh: 0.25, ou: 1 },
   ɨ: { aa: 0, ee: 41, ih: 1, oh: 0, ou: 0 },
