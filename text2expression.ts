@@ -11,7 +11,7 @@ import {
   wordBreakDuration,
 } from "./ipa2VRMMouthExpression";
 
-export type T2IPASupportedLanguages = "en" | "ipa";
+export type T2IPASupportedLanguages = "en" | "ja" | "ipa" | "any";
 
 export interface IPATextExpressions {
   text: string;
@@ -40,6 +40,15 @@ export async function text2expression(
     );
   }
   switch (lang) {
+    case "ja":
+      const jaIpaStr = await ja2ipa(text, ipaDictPath as string);
+      const jaExpressions = ipa2mouth(jaIpaStr);
+      return {
+        text: jaIpaStr,
+        duration: estimateIPARuntime(jaIpaStr),
+        all: jaExpressions,
+      };
+    case "any":
     case "en":
       const ipaStr = await en2ipa(text, ipaDictPath as string);
       const expressions = ipa2mouth(ipaStr);
@@ -93,7 +102,7 @@ let en2ipaUtil: TextToIPAType;
  * 'Hi, how are you today' =>
  * 'hajˈ . hawˈ ɑˈɹ juˈ tʌdejˈ'
  */
-async function en2ipa(text: string, ipaDictPath: string) {
+async function en2ipa(text: string, ipaDictPath: string): Promise<string> {
   if (!en2ipaUtil) {
     en2ipaUtil = new TextToIPA(ipaDictPath);
   }
@@ -108,6 +117,39 @@ async function en2ipa(text: string, ipaDictPath: string) {
   }
   const convertedText = ipas.join(" ");
   return convertedText;
+}
+
+let ja2ipaUtil: TextToIPAType;
+async function ja2ipa(text: string, ipaDictPath: string): Promise<string> {
+  if (!ja2ipaUtil) {
+    ja2ipaUtil = new TextToIPA(ipaDictPath);
+  }
+  let startIndex = 0;
+  let endIndex = text.length;
+  let ipaStr = "";
+  while (startIndex < text.length) {
+    if (startIndex === endIndex) {
+      startIndex++;
+      endIndex = text.length;
+    }
+    const substr = text.substring(startIndex, endIndex);
+    const ipaWord: IPAWordType = await ja2ipaUtil.lookup(substr);
+    if (ipaWord.error) {
+      endIndex--;
+    } else {
+      const kanaRegex = /^[\u3040-\u309F\u30A0-\u30FF\uFF66-\uFF9D]+$/;
+      const onlyKana = kanaRegex.test(substr);
+      const ipaText = ipaWord.text.split(" OR")[0];
+      if (onlyKana) {
+        ipaStr += ipaText;
+      } else {
+        ipaStr += ipaText + " ";
+      }
+      startIndex = endIndex;
+      endIndex = text.length;
+    }
+  }
+  return ipaStr;
 }
 
 /**
